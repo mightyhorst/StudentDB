@@ -18,6 +18,8 @@ Demo hosted on dropbox, sign up and have a play around!
 ===========
 https://dl.dropbox.com/u/4161923/StudentDB/public/index.html
 
+!["Screenshot"](https://raw.github.com/superlogical/StudentDB/master/screenshots/StudentDB.png)
+
 [0]: http://angularjs.org/
 [1]: http://mgcrea.github.com/angular-strap/
 [2]: http://twitter.github.com/bootstrap/
