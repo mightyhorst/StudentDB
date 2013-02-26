@@ -3,6 +3,14 @@ StudentDB
 
 Mum needed a new database for kids at her school, so I spent the weekend (and some) building a site with AngularJS and Parse.com
 
+I've included an simple [ExpressJS][7] app that you can use to host the site locally.
+
+Signup to Parse.com and create a new application, from there you can copy the applicationId and javascriptSdkId key if you want to play around with the Parse backend! You need to follow the documentation from Parse to learn how to lock the application down. 
+
+- https://parse.com/docs/data#security
+- https://parse.com/docs/js_guide#users-security
+- https://parse.com/docs/js_guide#users-acls
+
 Libraries used:
 - [AngularJS][0] Superheroic JavaScript MVW FrameworkJavascript MVC by Google.
 - [AngularStrap][1] Bootstrap directives for AngularJS.
@@ -28,3 +36,4 @@ https://dl.dropbox.com/u/4161923/StudentDB/public/index.html
 [5]: https://github.com/CodeSeven/toastr
 [5]: http://twitter.com/jakescott
 [6]: http://jquery.com/
+[7]: http://expressjs.com
