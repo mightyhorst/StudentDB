@@ -1,0 +1,43 @@
+<div ng-init="init()">
+
+    <p>
+        <button class="btn btn-small" ng-click="newStudent()"><i class="icon-user"></i> New Student</button>
+        <button class="btn btn-small" ng-click="refresh()"><i class="icon-refresh"></i> Refresh</button>
+    </p>
+
+    <table class="table table-bordered table-condensed">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Year/Room</th>
+            <th>Ethnicity</th>
+            <th>Date of Birth</th>
+            <th>Date of Entry</th>
+            <th>Date of Last I.E.P</th>
+            <th>Need</th>
+            <th>Edit</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="student in students">
+            <td>{{$index + 1}}</td>
+            <td>{{student.firstName}}</td>
+            <td>{{student.lastName}}</td>
+            <td>{{student.gender}}</td>
+            <td>{{student.yearRoom}}</td>
+            <td>{{student.ethnicity}}</td>
+            <td>{{student.dateOfBirth | date:'dd MMMM yyyy'}}</td>
+            <td>{{student.dateOfEntry | date:'dd MMMM yyyy'}}</td>
+            <td>{{student.dateOfLastIEP | date:'dd MMMM yyyy'}}</td>
+            <td>{{student.need}}</td>
+            <td>
+                <a href="#/students/{{student.id}}" class="btn btn-small"><i class="icon-edit"></i> Edit</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>

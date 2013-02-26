@@ -1,0 +1,145 @@
+<div ng-init="init()">
+
+    <div class="row">
+        <div class="span8 offset2">
+            <form name="form" class="form-student">
+
+                <h2 class="form-signin-heading">{{student.firstName}} {{student.lastName}}&nbsp;</h2>
+
+
+                <div class="row">
+                    <div class="span2">
+                        <label>First Name</label>
+                        <input type="text" class="span2" ng-model="student.firstName" name="firstName">
+                    </div>
+                    <div class="span2">
+                        <label>Last Name</label>
+                        <input type="text" class="span2" ng-model="student.lastName" name="lastName">
+                    </div>
+                    <div class="span2">
+                        <label>Date of birth</label>
+
+                        <div class="control-group input-append">
+                            <input type="text" class="input-small ng-pristine ng-valid" ng-model="student.dateOfBirth"
+                                   data-date-format="dd/mm/yyyy" bs-datepicker placeholder="dd/mm/yyyy">
+                            <button type="button" class="btn" data-toggle="datepicker"><i class="icon-calendar"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="span2">
+                        <label>Year/Room</label>
+                        <input type="text" class="span2" ng-model="student.yearRoom" name="yearRoom">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="span2">
+                        <label>Gender</label>
+                        <select class="span2" ng-model="student.gender" name="gender">
+                            <option value=""></option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="span2">
+                        <label>Ethnicity</label>
+                        <input type="text" class="span2" ng-model="student.ethnicity" name="ethnicity">
+                    </div>
+                    <div class="span2">
+                        <label>Date of entry</label>
+
+                        <div class="control-group input-append">
+                            <input type="text" class="input-small ng-pristine ng-valid" ng-model="student.dateOfEntry"
+                                   data-date-format="dd/mm/yyyy" bs-datepicker placeholder="dd/mm/yyyy">
+                            <button type="button" class="btn" data-toggle="datepicker"><i class="icon-calendar"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="span2">
+                        <label>Date of Last I.E.P</label>
+
+                        <div class="control-group input-append">
+                            <input type="text" class="input-small ng-pristine ng-valid" ng-model="student.dateOfLastIEP"
+                                   data-date-format="dd/mm/yyyy" bs-datepicker placeholder="dd/mm/yyyy">
+                            <button type="button" class="btn" data-toggle="datepicker"><i class="icon-calendar"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="span8">
+                        <label>Needs</label>
+                        <textarea ng-model="student.need" rows="3" class="span8" name="need"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn btn-primary" type="submit" ng-click="saveStudent()">Save Student</button>
+                    <a href="#/students" class="btn">Cancel</a>
+                    <button type="button" style="float:right" class="btn btn-danger" data-placement="right"
+                            ng-controller="StudentDeleteModalController" bs-modal="'modalTemplate'">Delete Student
+                    </button>
+                </div>
+
+            </form>
+
+
+            <h4>Actions</h4>
+
+            <table class="table table-bordered table-condensed">
+                <thead>
+                <tr>
+                    <th class="span1">#</th>
+                    <th class="span2">Date</th>
+                    <th>Description</th>
+                    <th class="span1">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="action in actions">
+                    <td>{{$index + 1}}</td>
+                    <td>{{action.date | date:'dd MMMM yyyy'}}</td>
+                    <td>{{action.description | date:'dd MMMM yyyy'}}</td>
+                    <td style="text-align: right">
+                        <button class="btn btn-small" ng-click="deleteAction(action.id)">Delete</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="well">
+                <form>
+                    <div class="control-group input-append">
+                        <input type="text" class="input-small" ng-model="action.date" name="date"
+                               data-date-format="dd/mm/yyyy" bs-datepicker placeholder="dd/mm/yyyy">
+                        <button type="button" class="btn" data-toggle="datepicker"><i class="icon-calendar"></i>
+                        </button>
+                    </div>
+                    <div class="input-append">
+                        <input type="text" class="input-large span5" ng-model="action.description"
+                               name="description" placeholder="Description">
+                        <button type="submit" class="btn btn-primary" ng-click="saveAction()">Add Action</button>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
